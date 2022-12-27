@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Simple Drag&Drop using Generators</title>
+	</head>
+
+	<style media="screen">
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+
+		body {
+			display: flex;
+			gap: 10px;
+			padding: 10px;
+		}
+
+		.box {
+			height: 100px;
+			width: 100px;
+			line-height: 100px;
+			background-color: red;
+			color: white;
+			text-align: center;
+			cursor: grab;
+			user-select: none;
+		}
+	</style>
+
+	<body>
+		<div
+			class="box"
+			data-dnd="true"
+		>
+			Drag me!!!
+		</div>
+
+		<div
+			class="box"
+			data-dnd="true"
+		>
+			Drag me!!!
+		</div>
+
+		<div
+			class="box"
+			data-dnd="true"
+		>
+			Drag me!!!
+		</div>
+
+		<script type="module">
+			import { dragAndDrop } from './src/dnd.js';
+
+			for (const $el of document.querySelectorAll('*[data-dnd="true"]')) {
+				dragAndDrop($el)
+			}
+		</script>
+	</body>
+</html>
