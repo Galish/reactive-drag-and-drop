@@ -2,9 +2,10 @@
   "name": "drag-and-drop",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/Galish/drag-and-drop/issues"
   },
-  "homepage": "https://github.com/Galish/drag-and-drop#readme"
+  "homepage": "https://github.com/Galish/drag-and-drop#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  },
+  "jest": {
+    "clearMocks": true,
+    "testEnvironment": "jest-environment-node",
+    "transform": {}
+  }
 }
